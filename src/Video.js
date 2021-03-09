@@ -1,20 +1,19 @@
 import React, { useRef, useState } from "react";
 import "./Video.css";
-import Video1 from "./video.mp4";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from './VideoSidebar'
 
-const Video = () => {
+const Video = ({url,channel,description,song, likes,shares,messages}) => {
   return (
     <div className="video">
       <video
         className="video__player"
         loop
-        src={Video1}
+        src={url}
         controls="controls"
       ></video>
-      <VideoFooter/>
-      <VideoSidebar/>
+      <VideoFooter channel={channel} description={description} song={song}/>
+      <VideoSidebar likes={likes} messages={messages} shares={shares  } />
     </div>
   );
 };
